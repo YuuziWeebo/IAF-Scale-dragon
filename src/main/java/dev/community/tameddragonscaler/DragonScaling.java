@@ -9,7 +9,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
  * Wild dragons always use 1.0, and untouched tame dragons use vanilla's default 1.0.
  */
 public final class DragonScaling {
-    public static final int MIN_PERCENT = 40;
+    public static final int MIN_PERCENT = 10;
     public static final int MAX_PERCENT = 120;
     public static final int STEP_PERCENT = 5;
     private DragonScaling() { }
