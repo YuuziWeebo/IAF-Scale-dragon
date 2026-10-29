@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.community.tameddragonscaler.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "DragonBaseEntityMixin",
+    "DragonPartEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,45 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+
+group = 'dev.community.tameddragonscaler'
+version = project.mod_version
+base.archivesName = project.mod_id
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    maven { url = 'https://cursemaven.com' }
+}
+
+neoForge {
+    version = project.neo_version
+    parchment {
+        minecraftVersion = '1.21.1'
+        mappingsVersion = '2024.11.17'
+    }
+    mods {
+        tameddragonscaler {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+dependencies {
+    // Exact IceAndFire-CE NeoForge 1.21.1 build, not distributed inside this addon's JAR.
+    compileOnly 'curse.maven:iceandfire-ce-1040076:9128508'
+    // Classes referenced in IceAndFire-CE's public signatures.
+    compileOnly 'curse.maven:uranus-1010827:8682870'
+    compileOnly 'curse.maven:jupiter-1072905:7738312'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+jar {
+    manifest.attributes('Implementation-Title': 'Tamed Dragon Scaler',
+                        'Implementation-Version': project.version)
+}

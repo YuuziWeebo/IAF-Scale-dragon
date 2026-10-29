@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="tameddragonscaler"
+version="0.1.0-alpha"
+displayName="Tamed Dragon Scaler"
+authors="Community addon"
+description='''
+Per-dragon size slider for tamed IceAndFire Community Edition dragons.
+Scales rendering, primary hitbox and multipart hitboxes without changing age or stats.
+'''
+
+[[mixins]]
+config="tameddragonscaler.mixins.json"
+
+[[dependencies.tameddragonscaler]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.tameddragonscaler]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.tameddragonscaler]]
+modId="iceandfire"
+type="required"
+versionRange="[2.1.4]"
+ordering="AFTER"
+side="BOTH"
